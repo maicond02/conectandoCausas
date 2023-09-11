@@ -3,7 +3,7 @@
         <Menubar :model="items" >
             <template #end>
                 <div>
-                    <Dropdown v-model="selectedLanguage" :options="languages" optionLabel="language" placeholder="Select a City" class="" />
+                    <Dropdown v-model="selectedLanguage" :options="languages" optionLabel="language" placeholder="Idioma" class="" />
                 </div>
             </template>
         </Menubar>

@@ -1,5 +1,6 @@
 <template>
     <div>
-        <HomeDefault />
+        <HomeBanner />
+        Olá
     </div>
 </template>

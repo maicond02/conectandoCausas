@@ -3,7 +3,7 @@
         <div>
             <HeaderNavbar />
         </div>
-        <div>
+        <div class="mt-2">
             <slot />
         </div>
     </div>

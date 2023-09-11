@@ -60,6 +60,7 @@ import ToggleButton from 'primevue/togglebutton';
 import ProgressSpinner from 'primevue/progressspinner';
 import ConfirmDialog from 'primevue/confirmdialog';
 import ConfirmationService from 'primevue/confirmationservice';
+import Image from 'primevue/image';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(DialogService);
@@ -122,5 +123,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('ToggleButton', ToggleButton)
     nuxtApp.vueApp.component('InputSwitch', InputSwitch)
     nuxtApp.vueApp.component('ProgressSpinner', ProgressSpinner) 
+    nuxtApp.vueApp.component('Image', Image)
 
 });
