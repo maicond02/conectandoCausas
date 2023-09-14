@@ -1,5 +1,5 @@
 <template>
-    <div class="grid bg-blue-300 border-round-xl">
+    <div class="grid bg-blue-200 border-round-xl">
         <div class="col-6 h-full ">
             <img src="@/assets/images/donation.png" class="w-12 border-round-xl"/>
         </div>

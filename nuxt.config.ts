@@ -28,6 +28,7 @@ export default defineNuxtConfig({
         'primevue/resources/primevue.css',
         'primeicons/primeicons.css',
         'primeflex/primeflex.css',
+        '/assets/default.css'
     ],
     modules: [
         [
@@ -40,7 +41,9 @@ export default defineNuxtConfig({
           },
         ],
       ],
-
+    	build: {
+        transpile: ['primevue','i18n'],
+      },
       typescript: {
         strict: true,
       },
