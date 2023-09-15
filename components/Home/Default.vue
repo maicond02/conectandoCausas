@@ -1,17 +1,17 @@
 <template>
     <div class="grid bg-blue-200 border-round-xl">
-        <div class="col-6 h-full ">
+        <div class="sm:col-6 col-12 h-full ">
             <img src="@/assets/images/donation.png" class="w-12 border-round-xl"/>
         </div>
-        <div class="col-6">
+        <div class="sm:col-6 col-12">
             <div class="flex justify-content-center">
                 <div>
-                    <p class="text-6xl">Salve vidas, ampare</p>
-                    <p class="text-2xl">Você pode ajudar de várias formas além</p>
-                    <p class="text-2xl">da doação em dinheiro. Junte-se a nós e</p>
-                    <p class="text-2xl">transforme vidas.</p>
+                    <p class="text-6xl">{{$t('Save lives, support')}}</p>
+                    <p class="text-2xl">{{$t('You can help in many ways besides')}}</p>
+                    <p class="text-2xl">{{$t('donating money. Join us and')}}</p>
+                    <p class="text-2xl">{{$t('transform lives.')}}</p>
                     <div class="flex justify-content-center">
-                        <Button class="bg-white w-6" label="Quero ajudar" />
+                        <Button class="bg-white w-6" label="I want to help" />
                     </div>
                 </div>
             </div>

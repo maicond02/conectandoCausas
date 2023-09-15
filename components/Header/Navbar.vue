@@ -1,55 +1,33 @@
 <template>
     <div>
-        <Menubar :model="items" >
+        <Menubar :model="menuStore.items" >
             <template #end>
                 <div>
-                    <span>{{$t('hello')}}</span>
-                    <Dropdown v-model="$i18n.locale" :options="languages" optionLabel="language" optionValue="code" placeholder="Idioma" class="" />
+                    <Dropdown @change="menuStore.loadNavbarItemsByLanguage($i18n.locale)" v-model="$i18n.locale" :options="languages" optionLabel="language" optionValue="code" placeholder="Idioma" class="" />
                 </div>
             </template>
         </Menubar>
     </div>
 </template>
 <script lang="ts">
-export default {
-    data() {
-        return {
-            selectedLanguage:'',
-            languages:[
-                { language: 'English', code: 'en' },
-                { language: 'Português', code: 'pt' },
-                { language: 'Espanhol', code: 'es' },
-            ],
-            items: [
-                {
-                    label: 'Home',
-                    icon: 'pi pi-fw pi-home',
-                    to:'/'
-                },
-                {
-                    label: 'About',
-                    icon: 'pi pi-fw pi-info-circle',
-                    to:'/about'
-                },
-                {
-                    label: 'Contact',
-                    icon: 'pi pi-fw pi-comments',
-                    to:'/contact'
-                },
-                {
-                    label: 'Register',
-                    icon: 'pi pi-fw pi-user-plus',
-                    to:'/user/register'
-                },
-                {
-                    label: 'Login',
-                    icon: 'pi pi-fw pi-sign-in',
-                    to:'/user/login'
-                },
-            ]
-        };
-    },
-};
+    import { useMenuStore } from '@/stores/menu';
+    export default {
+        data() {
+            return {
+                menuStore: useMenuStore(),
+                selectedLanguage:'',
+                languages:[
+                    { language: 'English', code: 'en' },
+                    { language: 'Português', code: 'pt' },
+                    { language: 'Espanhol', code: 'es' },
+                ],
+
+            };
+        },
+        mounted(){
+            this.menuStore.loadNavbarItemsByLanguage(this.$i18n.locale)
+        }
+    };
 </script>
 
 <style scoped>
