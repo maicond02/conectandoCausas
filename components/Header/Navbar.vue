@@ -3,7 +3,7 @@
         <Menubar :model="menuStore.items" >
             <template #end>
                 <div>
-                    <Dropdown @change="menuStore.loadNavbarItemsByLanguage($i18n.locale)" v-model="$i18n.locale" :options="languages" optionLabel="language" optionValue="code" placeholder="Idioma" class="" />
+                    <Dropdown @change="menuStore.loadNavbarItemsByLanguage($i18n.locale, $route.name)" v-model="$i18n.locale" :options="languages" optionLabel="language" optionValue="code" placeholder="Idioma" class="" />
                 </div>
             </template>
         </Menubar>
@@ -25,7 +25,8 @@
             };
         },
         mounted(){
-            this.menuStore.loadNavbarItemsByLanguage(this.$i18n.locale)
+            this.menuStore.loadNavbarItemsByLanguage(this.$i18n.locale, this.$route.name)
+            console.log(this.$route.name)
         }
     };
 </script>
