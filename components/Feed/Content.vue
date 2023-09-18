@@ -3,7 +3,7 @@
         <Card class="container-card">
             <template #content>
                 <div class="grid">
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -13,7 +13,7 @@
                         </Card>
                         <p>ong 1</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -23,7 +23,7 @@
                         </Card>
                         <p>ong 2</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -33,7 +33,7 @@
                         </Card>
                         <p>ong 3</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -43,7 +43,7 @@
                         </Card>
                         <p>ong 4</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -53,7 +53,7 @@
                         </Card>
                         <p>ong 5</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>

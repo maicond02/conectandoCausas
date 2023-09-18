@@ -39,6 +39,29 @@ export const useMenuStore = defineStore('navbar', {
                                 to:'/user/login'
                             },
                         ]
+                    }else{
+                        this.items = [
+                            {
+                                label: 'Feed',
+                                icon: 'pi pi-fw pi-home',
+                                to:'/feed'
+                            },
+                            {
+                                label: 'dashboards',
+                                icon: 'pi pi-fw pi-chart-bar',
+                                to:'/user/dashboards'
+                            },
+                            {
+                                label: 'messages',
+                                icon: 'pi pi-fw pi-comments',
+                                to:'/user/messages'
+                            },
+                            {
+                                label: 'Profile',
+                                icon: 'pi pi-fw pi-user',
+                                to:'/user/profile'
+                            },
+                        ]
                     }
 
                 break;
@@ -69,6 +92,29 @@ export const useMenuStore = defineStore('navbar', {
                                 label: 'Entrar',
                                 icon: 'pi pi-fw pi-sign-in',
                                 to:'/user/login'
+                            },
+                        ]
+                    }else{
+                        this.items = [
+                            {
+                                label: 'Feed',
+                                icon: 'pi pi-fw pi-home',
+                                to:'/feed'
+                            },
+                            {
+                                label: 'Paineis',
+                                icon: 'pi pi-fw pi-chart-bar',
+                                to:'/user/dashboards'
+                            },
+                            {
+                                label: 'Mensagens',
+                                icon: 'pi pi-fw pi-comments',
+                                to:'/user/messages'
+                            },
+                            {
+                                label: 'Perfil',
+                                icon: 'pi pi-fw pi-user',
+                                to:'/user/profile'
                             },
                         ]
                     }
@@ -102,6 +148,29 @@ export const useMenuStore = defineStore('navbar', {
                                 to:'/user/login'
                             },
                         ]
+                    }else{
+                        this.items = [
+                            {
+                                label: 'Feed',
+                                icon: 'pi pi-fw pi-home',
+                                to:'/feed'
+                            },
+                            {
+                                label: 'Paneles',
+                                icon: 'pi pi-fw pi-chart-bar',
+                                to:'/user/dashboards'
+                            },
+                            {
+                                label: 'Mensajes',
+                                icon: 'pi pi-fw pi-comments',
+                                to:'/user/messages'
+                            },
+                            {
+                                label: 'Perfil',
+                                icon: 'pi pi-fw pi-user',
+                                to:'/user/profile'
+                            },
+                        ]
                     }
                 break;
                 default:
@@ -131,6 +200,29 @@ export const useMenuStore = defineStore('navbar', {
                                 label: 'Login',
                                 icon: 'pi pi-fw pi-sign-in',
                                 to:'/user/login'
+                            },
+                        ]
+                    }else{
+                        this.items = [
+                            {
+                                label: 'Feed',
+                                icon: 'pi pi-fw pi-home',
+                                to:'/feed'
+                            },
+                            {
+                                label: 'dashboards',
+                                icon: 'pi pi-fw pi-chart-bar',
+                                to:'/user/dashboards'
+                            },
+                            {
+                                label: 'messages',
+                                icon: 'pi pi-fw pi-comments',
+                                to:'/user/messages'
+                            },
+                            {
+                                label: 'Profile',
+                                icon: 'pi pi-fw pi-user',
+                                to:'/user/profile'
                             },
                         ]
                     }
