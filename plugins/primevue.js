@@ -61,6 +61,7 @@ import ProgressSpinner from 'primevue/progressspinner';
 import ConfirmDialog from 'primevue/confirmdialog';
 import ConfirmationService from 'primevue/confirmationservice';
 import Image from 'primevue/image';
+import Password from 'primevue/password';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(DialogService);
@@ -124,5 +125,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('InputSwitch', InputSwitch)
     nuxtApp.vueApp.component('ProgressSpinner', ProgressSpinner) 
     nuxtApp.vueApp.component('Image', Image)
+    nuxtApp.vueApp.component('Password', Password)
 
 });
