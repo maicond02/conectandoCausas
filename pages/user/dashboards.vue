@@ -1,5 +1,5 @@
 <template>
     <div>
-        dashboards
+        <dashboardsGraphics />
     </div>
 </template>
