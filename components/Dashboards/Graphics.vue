@@ -4,41 +4,78 @@
         <Card class="card-container">
             <template #content>
                 <div class="grid">
-                    <div class="col-3">
-                        <Card class="card-graphic">
-                            <template #content>
-                                <div class="card">
-                                    <Chart type="bar" :data="chartData" :options="chartOptions" />
-                                </div>
-                            </template>
-                        </Card>
+                    <div class="col-12 grid">
+                        <div class="col-3">
+                            <Card class="card-graphic h-full">
+                                <template #title>
+                                    <div class="flex justify-content-center">
+                                        <span class="text-black-alpha-60 text-4xl">Total arrecadado</span>
+                                    </div>
+                                </template>
+                                <template #content>
+                                    <div class="card flex justify-content-center">
+                                        <p class="text-black-alpha-60 text-4xl">$200.000</p>
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
+                        <div class="col-3">
+                            <Card class="card-graphic h-full">
+                                <template #title>
+                                    <div class="flex justify-content-center">
+                                        <span class="text-black-alpha-60 text-4xl">Arrecadado no mês</span>
+                                    </div>
+                                </template>
+                                <template #content>
+                                    <div class="card flex justify-content-center">
+                                        <p class="text-black-alpha-60 text-4xl">$20.000</p>
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
+                        <div class="col-3">
+                            <Card class="card-graphic h-full">
+                                <template #title>
+                                    <div class="flex justify-content-center">
+                                        <span class="text-black-alpha-60 text-4xl">Visualizações no perfil</span>
+                                    </div>
+                                </template>
+                                <template #content>
+                                    <div class="card flex justify-content-center">
+                                        <p class="text-black-alpha-60 text-4xl">20 mil views</p>
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
+                        <div class="col-3">
+                            <Card class="card-graphic h-full">
+                                <template #content>
+                                    <div class="card">
+                                        <Chart type="line" :data="chartData" :options="chartOptions" />
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <Card class="card-graphic">
-                            <template #content>
-                                <div class="card">
-                                    <Chart type="bar" :data="chartData" :options="chartOptions" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
-                    <div class="col-3">
-                        <Card class="card-graphic">
-                            <template #content>
-                                <div class="card">
-                                    <Chart type="bar" :data="chartData" :options="chartOptions" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
-                    <div class="col-3">
-                        <Card class="card-graphic">
-                            <template #content>
-                                <div class="card">
-                                    <Chart type="bar" :data="chartData" :options="chartOptions" />
-                                </div>
-                            </template>
-                        </Card>
+                    <div class="col-12 grid">
+                        <div class="col-6">
+                            <Card class="card-graphic">
+                                <template #content>
+                                    <div class="card">
+                                        <Chart type="bar" :data="chartData" :options="chartOptions" />
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
+                        <div class="col-6">
+                            <Card class="card-graphic">
+                                <template #content>
+                                    <div class="card">
+                                        <Chart type="bar" :data="chartData" :options="chartOptions" />
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
                     </div>
                 </div>
             </template>
