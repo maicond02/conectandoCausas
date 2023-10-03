@@ -3,7 +3,8 @@
         <Card class="container-card">
             <template #content>
                 <div class="grid">
-                    <div class="col-12 sm:col-4">
+                    <nuxt-link to="/feed/ong">
+                        <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
                                 <div>
@@ -13,6 +14,7 @@
                         </Card>
                         <p>ong 1</p>
                     </div>
+                    </nuxt-link>
                     <div class="col-12 sm:col-4">
                         <Card class="ong-card">
                             <template #content>
