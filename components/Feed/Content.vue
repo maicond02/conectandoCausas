@@ -3,67 +3,21 @@
         <Card class="container-card">
             <template #content>
                 <div class="grid">
-                    <nuxt-link to="/feed/ong">
-                        <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
+                    <div 
+                        v-for="ong in ongStore.ongsData" 
+                        :key="ong.id" 
+                        class="col-12 sm:col-4"
+                    >
+                        <Card class="ong-card" @click="redirectToOngSelected(ong.id)">
                             <template #content>
                                 <div>
-                                    ola
+                                    
                                 </div>
                             </template>
                         </Card>
-                        <p>ong 1</p>
-                    </div>
-                    </nuxt-link>
-                    <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
-                            <template #content>
-                                <div>
-                                    ola
-                                </div>
-                            </template>
-                        </Card>
-                        <p>ong 2</p>
-                    </div>
-                    <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
-                            <template #content>
-                                <div>
-                                    ola
-                                </div>
-                            </template>
-                        </Card>
-                        <p>ong 3</p>
-                    </div>
-                    <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
-                            <template #content>
-                                <div>
-                                    ola
-                                </div>
-                            </template>
-                        </Card>
-                        <p>ong 4</p>
-                    </div>
-                    <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
-                            <template #content>
-                                <div>
-                                    ola
-                                </div>
-                            </template>
-                        </Card>
-                        <p>ong 5</p>
-                    </div>
-                    <div class="col-12 sm:col-4">
-                        <Card class="ong-card">
-                            <template #content>
-                                <div>
-                                    ola
-                                </div>
-                            </template>
-                        </Card>
-                        <p>ong 6</p>
+                        <div class="flex">
+                            <p>{{ ong.name }}</p>
+                        </div>
                     </div>
                 </div>
             </template>
@@ -73,14 +27,32 @@
 
 <script lang="ts">
 
+import {useOngStore} from "@/stores/ongs"
+
+export default {
+    data() {
+        return {
+            ongStore: useOngStore(),
+        }
+    },
+    methods: {
+        redirectToOngSelected(id:number){
+            this.$router.push('/feed/ong')
+            console.log(id)
+        }
+    },
+    mounted(){
+        this.ongStore.getOngsData()
+    }
+}
 </script>
 
 <style>
-    .ong-card{
+    .ong-card {
         background-color: rgb(255, 255, 255) !important;
         height: 200px;
     }
-    .container-card{
+    .container-card {
         background-color: transparent !important;
         border: solid 3px rgb(65, 65, 65);
     }

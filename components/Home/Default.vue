@@ -11,7 +11,7 @@
                     <p class="text-2xl">{{$t('donating money. Join us and')}}</p>
                     <p class="text-2xl">{{$t('transform lives.')}}</p>
                     <div class="flex justify-content-center">
-                        <Button class="bg-white w-6" label="I want to help" />
+                        <Button @click="$router.push('/user/login')" class="bg-white w-6" label="I want to help" />
                     </div>
                 </div>
             </div>
