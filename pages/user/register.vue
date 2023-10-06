@@ -6,18 +6,22 @@
       <div class="sm:col-6 col-12">
           <Card class="card1">
             <template #content>
-                <div class="flex justify-content-end mx-7 mt-7">
+                <div class="flex justify-content-end mx-8 mt-7">
                   <div class="conteudo flex flex-column">
-                      <h3 class="titulo">CONNECTING CAUSES</h3>
-                      <h3 class="titulo2">REGISTER</h3>
-                      <br>
-                      <InputText placeholder="Name" class="" type="text" />
-                      <br>
-                      <InputText placeholder="Surname" class="" type="text" />
-                      <br>
-                      <InputText placeholder="E-mail" class="" type="text" />
-                      <br>
-                      <InputText placeholder="Password" class="" type="password"/>
+                      <Card class="card2">
+                        <template #content>
+                          <h3 class="flex justify-content-center titulo">CONNECTING CAUSES</h3>
+                          <h3 class="flex justify-content-center titulo2">REGISTER</h3>
+                          <br>
+                          <InputText placeholder="Name" class="flex border-round inpText" type="text" />
+                          <br>
+                          <InputText placeholder="Surname" class="flex border-round inpText" type="text" />
+                          <br>
+                          <InputText placeholder="E-mail" class="flex border-round inpText" type="text" />
+                          <br>
+                          <InputText placeholder="Password" class="flex border-round inpText" type="password"/>
+                        </template>
+                      </Card>
                   </div>
                 </div>
             </template>
@@ -33,6 +37,13 @@
 }
 .card1{
   background-color:transparent;
+  
+}
+.card2{
+  width: 16rem;
+  height: 100%;
+}
+.inpText{
   
 }
 .conteudo{
