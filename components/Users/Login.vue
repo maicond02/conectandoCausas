@@ -6,15 +6,6 @@ import Button from 'primevue/button';
             <template #content>
                 <div class="grid">
                     <div class="col-12 md:col-6">
-                        <Card class="cards">
-                            <template #content>
-                                <div class="flex align-items-center justify-content-center">
-                                    <img class="w-12" src="../../public/loginimage.png" alt="">
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
-                     <div class="col-12 md:col-6">
                               <div class="flex align-items-center justify-content-center">
                                   <Card class="w-12 cards">
                                       <template #content>
@@ -27,14 +18,23 @@ import Button from 'primevue/button';
                                                 <InputText placeholder="E-mail" class="flex border-round w-8" type="text" />
                                                 <br>
                                                 <InputText placeholder="Password" class="flex border-round w-8" type="password"/>
-                                                <Button class="mt-4 w-4" label="Entrar" severity="info"/>
-                                                <p>OU</p>
-                                                <Button label="Crie sua conta" plain text raised class="text-blue-400 w-4"/>
+                                                <Button class="mt-4 w-4" label="Login" severity="info"/>
+                                                <p>OR</p>
+                                                <Button label="Create account" plain text raised class="text-blue-400 w-4"/>
                                             </div>
                                       </template>
                                    </Card>
                                </div>
                        </div>
+                    <div class="col-12 md:col-6">
+                        <Card class="cards">
+                            <template #content>
+                                <div class="flex align-items-center justify-content-center">
+                                    <img class="w-12" src="../../public/loginimage.png" alt="">
+                                </div>
+                            </template>
+                        </Card>
+                    </div>
                    </div>
             </template>
          </Card>
