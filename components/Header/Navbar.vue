@@ -32,43 +32,26 @@
 </script>
 
 <style scoped>
-    :deep(.p-component){
-        height: 60px;
-        background-color: transparent;
-        border: none;
-    }
-    :deep(.p-menubar-root-list){
-        background-color: transparent;
-        border: none;
-    }
-    :deep(.p-menubar){
-        border-bottom: 2px solid rgb(75, 75, 75);
-    }
     :deep(.p-dropdown-label){
         padding: 0;
         padding-left: 10px;
-        color: white !important;
+        color:rgb(129, 129, 129) !important;
     }
 
     :deep(.p-dropdown){
         height: 30px;
+        width: 150px;
         display: flex;
         align-items: center;
-        color: white !important;
+        border:solid 1px transparent;
+    }
+
+    :deep(.p-dropdown:hover){
+        border:solid 1px transparent;
     }
 
     :deep(.p-menuitem-text){
-        color: white !important;
-    }
-    :deep(.p-menuitem-icon){
-        color: white !important;
+        color:rgb(129, 129, 129) !important;
     }
 
-    :deep(.p-dropdown-item){
-        color: white !important;
-    }
-
-    :deep(.p-dropdown-trigger-icon){
-        color: white !important;
-    }
 </style>

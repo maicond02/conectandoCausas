@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       buildAssetsDir: '/src/'
     },
     css: [
-        'primevue/resources/themes/md-dark-indigo/theme.css',
+        'primevue/resources/themes/md-light-indigo/theme.css',
         'primevue/resources/primevue.css',
         'primeicons/primeicons.css',
         'primeflex/primeflex.css',
