@@ -2,19 +2,19 @@
     <div>
         <Card>
             <template #content>
-                <div class="grid">
-                    <div class="sm:col-6 col-12 h-full ">
+                <div class="grid border-100 border-2">
+                    <div class="sm:col-6 col-12 h-full bg-blue-100">
                         <img src="@/assets/images/donation.png" class="w-12 border-round-xl"/>
                     </div>
                     <div class="sm:col-6 col-12">
                         <div class="flex justify-content-center">
                             <div>
-                                <p class="text-6xl">{{$t('Save lives, support')}}</p>
-                                <p class="text-2xl">{{$t('You can help in many ways besides')}}</p>
-                                <p class="text-2xl">{{$t('donating money. Join us and')}}</p>
-                                <p class="text-2xl">{{$t('transform lives.')}}</p>
+                                <p class="text-6xl">Salve vidas, ampare</p>
+                                <p class="text-2xl">Você pode ajudar de várias formas além</p>
+                                <p class="text-2xl">da doação em dinheiro. Junte-se a nós e</p>
+                                <p class="text-2xl">transforme vidas.</p>
                                 <div class="flex justify-content-center">
-                                    <Button @click="$router.push('/user/login')" class="w-6" label="I want to help" severity="info"/>
+                                    <Button @click="$router.push('/user/login')" class="w-6" label="Eu quero ajudar!" severity="info"/>
                                 </div>
                             </div>
                         </div>

@@ -2,8 +2,16 @@
     <div>
         <Menubar :model="menuStore.items" >
             <template #end>
-                <div>
-                    <Dropdown @change="menuStore.loadNavbarItemsByLanguage($i18n.locale, $route.name)" v-model="$i18n.locale" :options="languages" optionLabel="language" optionValue="code" placeholder="Idioma" class="" />
+                <div v-if="$route.name == 'index' || $route.name == 'about' 
+                    || $route.name == 'contact' || $route.name == 'user-login' 
+                    || $route.name == 'user-register'" class="flex"
+                >
+                    <nuxt-link to="/user/login">
+                        <Button class="mr-4" label="Entrar na sua conta" severity="info" text raised />
+                    </nuxt-link>
+                    <nuxt-link to="/user/register">
+                        <Button class="mr-3" label="Criar uma nova conta" severity="info" outlined />
+                    </nuxt-link>
                 </div>
             </template>
         </Menubar>

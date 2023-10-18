@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Card class="container-card">
+        <Card>
             <template #content>
                 <div class="grid">
                     <div 
@@ -8,9 +8,9 @@
                         :key="ong.id" 
                         class="col-12 sm:col-4"
                     >
-                        <Card class="ong-card" @click="redirectToOngSelected(ong.id)">
+                        <Card class="ong-card cursor-pointer" @click="redirectToOngSelected(ong.id)">
                             <template #content>
-                                <div>
+                                <div @click="console.log('oi')">
                                     
                                 </div>
                             </template>
@@ -33,12 +33,16 @@ export default {
     data() {
         return {
             ongStore: useOngStore(),
+            isHovered: false
         }
     },
     methods: {
         redirectToOngSelected(id:number){
             this.$router.push('/feed/ong')
             console.log(id)
+        },
+        elevationCard(){
+
         }
     },
     mounted(){
@@ -51,9 +55,5 @@ export default {
     .ong-card {
         background-color: rgb(255, 255, 255) !important;
         height: 200px;
-    }
-    .container-card {
-        background-color: transparent !important;
-        border: solid 3px rgb(65, 65, 65);
     }
 </style>
