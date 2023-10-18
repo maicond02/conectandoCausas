@@ -63,6 +63,7 @@ import ConfirmationService from 'primevue/confirmationservice';
 import Image from 'primevue/image';
 import Password from 'primevue/password';
 import Chart from 'primevue/chart';
+import Divider from 'primevue/divider';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(DialogService);
@@ -71,6 +72,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     nuxtApp.vueApp.use(PrimeVue, {ripple: true});
     nuxtApp.vueApp.use('badge', BadgeDirective);
+    nuxtApp.vueApp.component('Divider', Divider);
     nuxtApp.vueApp.component('Button', Button);
     nuxtApp.vueApp.component('Card',Card)
     nuxtApp.vueApp.component('Panel',Panel)
