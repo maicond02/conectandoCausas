@@ -1,9 +1,5 @@
 <template>
     <div>
-        about
+        <UsersAbout/>
     </div>
 </template>
-
-<script lang="ts">
-
-</script>
