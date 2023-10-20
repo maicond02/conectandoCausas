@@ -2,7 +2,7 @@
     <div>
          <Card> 
             <template #content>
-                <div class="grid card-login">
+                <div class="grid shadow-3">
                     <div class="col-12 md:col-6">
                         <div class="flex flex-column align-items-center">
                             <h3>Crie sua conta gratuitamente</h3>
@@ -15,15 +15,21 @@
                             </Divider>
                             <div class="w-8">
                                 <span class="text-lg">Email</span>
-                                <InputText placeholder="Digite seu email" class="flex border-round w-12 mt-1" type="text" />
+                                <InputText v-model="userData.email" placeholder="Digite seu email" class="flex border-round w-12 mt-1" type="text" />
                             </div>
                             <div class="w-8 mt-4">
                                 <span class="text-lg">Apelido</span>
-                                <InputText placeholder="Digite seu apelido" class="flex border-round w-12 mt-1" type="text" />
+                                <InputText v-model="userData.apelido" placeholder="Digite seu apelido" class="flex border-round w-12 mt-1" type="text" />
                             </div>
                             <div class="w-8 mt-4">
                                 <span class="text-lg">Senha</span>
-                                <InputText placeholder="Digite sua senha" class="flex border-round w-12 mt-1" type="text" />
+                                <InputText v-model="userData.senha" placeholder="Digite sua senha" class="flex border-round w-12 mt-1" type="text" />
+                            </div>
+                            <div class="w-8 mt-4">
+                                <span class="text-lg">É uma organização?</span>
+                                <Dropdown v-model="userData.isOng" placeholder="Selecione uma opção" :options="options"
+                                    class="flex border-round w-12 mt-1" type="text" optionLabel="option"
+                                />
                             </div>
                             <div class="flex w-8 mt-3">
                                 <div class="w-12">
@@ -47,7 +53,19 @@
 </template>
 
 <script lang="ts">
-
+    export default {
+        data(){
+            return{
+                userData:{
+                    email:'',
+                    apelido:'',
+                    senha:'',
+                    isOng:''
+                },
+                options:[{option:'Não'},{option:'Sim'}]
+            }
+        }
+    }
 </script>
 
 <style scoped>
@@ -60,11 +78,6 @@
 
 .cards{
     height:600px !important;
-}
-
-.card-login{
-    border: solid 2px rgb(250, 250, 250);
-    border-radius: 5px;
 }
 
 </style>

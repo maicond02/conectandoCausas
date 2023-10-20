@@ -2,7 +2,7 @@
     <div>
          <Card> 
             <template #content>
-                <div class="grid card-login">
+                <div class="grid shadow-3">
                     <div class="col-12 md:col-6">
                         <div class="flex flex-column align-items-center">
                             <h3>Entrar em sua conta</h3>
@@ -56,11 +56,6 @@
 
 .cards{
     height:600px !important;
-}
-
-.card-login{
-    border: solid 2px rgb(250, 250, 250);
-    border-radius: 5px;
 }
 
 </style>
