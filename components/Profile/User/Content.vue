@@ -1,6 +1,7 @@
 <template>
-    <div class="shadow-2">
+    <div>
         <div class="gird">
+            <DashboardsGraphics />
         </div>
     </div>
 </template>

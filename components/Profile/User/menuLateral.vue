@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="flex flex-column align-items-center">
-            <Avatar label="P" class="mr-2" size="xlarge" shape="circle" />
-            <h3>Ajuda solidária</h3>
-            <div class="flex flex-column">
-                <span>Meio-Ambiente</span>
-                <span class="mt-2">Página</span>
+        <div class="grid">
+            <div class="col-12 flex justify-content-center">
+                <img class="w-12" src="../../../assets/images//save-planet.png" alt="">
+            </div>
+            <div class="col-12 flex justify-content-center">
+                <h4>ONG Ajuda Solidária</h4>
             </div>
         </div>
     </div>

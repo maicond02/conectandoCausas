@@ -35,11 +35,6 @@ export const useMenuStore = defineStore('navbar', {
                         to:'/feed'
                     },
                     {
-                        label: 'Paineis',
-                        icon: 'pi pi-fw pi-chart-bar',
-                        to:'/user/dashboards'
-                    },
-                    {
                         label: 'Menssagens',
                         icon: 'pi pi-fw pi-comments',
                         to:'/user/messages'
