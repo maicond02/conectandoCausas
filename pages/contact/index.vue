@@ -1,9 +1,6 @@
 <template>
     <div>
-        contact
+        <UsersContact/>
     </div>
 </template>
 
-<script lang="ts">
-
-</script>
