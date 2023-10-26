@@ -4,6 +4,7 @@
             <card class="flex justify-content-center w-12">
               <template #content>
                 <div class="col-12">
+                  <h3 style="font-size: xx-large;" class="col-12">Contato e nossas páginas</h3>
                   <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
@@ -15,7 +16,7 @@
                       Segue  nosso WhatsApp Messenger (19)123456789.
                     </p>
                   </Fieldset>
-                  
+                    <!---------------------------->
                   <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
@@ -27,7 +28,7 @@
                       Segue  nosso Instagram @ConectandoCausas_.
                     </p>
                   </Fieldset>
-
+                    <!---------------------------->
                   <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
@@ -39,7 +40,7 @@
                       Segue  nosso Facebook ConectandoCausas2023.
                     </p>
                   </Fieldset>
-
+                   <!---------------------------->
                   <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
@@ -80,7 +81,7 @@
 .custom-icon-twitter{
   color: #1DA1F2;
 }
-.custom{
+.custom-text-twitter{
   color: #1DA1F2;
 }
 
