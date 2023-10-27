@@ -4,7 +4,7 @@
             <template #content>
                 <div class="grid">
                     <div class="cardprimario flex justify-content-center col-12">
-                        <h3>Bem-vindo ao "Conectando Causas"!</h3>
+                        <h3 style="font-size: xx-large;">Bem-vindo ao "Conectando Causas"!</h3>
                     </div>
                     <div class="texto flex justify-content-center col-12 mt-4">
                         <p style="text-align: center; font-size: large;" class="">Somos uma organização não governamental comprometida em unir indivíduos apaixonados por causas nobres e colaborar para tornar o mundo um lugar melhor. Nosso objetivo é promover conexões para gerar um impacto positivo.</p>
