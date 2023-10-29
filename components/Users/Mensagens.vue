@@ -19,8 +19,34 @@
                     <p style="font-size: x-large;">Leozin</p>
                 </template>
                 <template #content>
-                    <card class="h-24rem">
+                    <card class="">
+                        <template #content>
+                            <card class="cardtext h-5rem flex justify-content-start">
+                                <template #content>
+                                    <p>Oi, tudo bem?</p>
+                                </template>
+                            </card>
+                            <card class="cardtext h-5rem mt-2 flex justify-content-start">
+                                <template #content>
+                                    <p>Qual é a localização da ONG ?</p>
+                                </template>
+                            </card>
 
+                            <div class="flex justify-content-end">
+                                <card class="cardtext2 h-5rem mt-2">
+                                    <template #content>
+                                        <p>oi, tudo sim, e com você?</p>
+                                    </template>
+                                </card>
+                            </div>
+                            <div class="flex justify-content-end">
+                                <card class="cardtext2 h-6rem mt-2">
+                                    <template #content>
+                                        <p>A ONG se localiza no endereço: Av. de Cillo, 3500 - Parque Universitario, Americana - SP, 13467-600</p>
+                                    </template>
+                                </card>
+                            </div>
+                        </template>
                     </card>
                 </template>
                 <template #footer>
@@ -46,7 +72,12 @@
 .p-inputtext{
     padding-left: 50px !important;
 }
-
+.cardtext{
+    background-color: aliceblue;
+}
+.cardtext2{
+    background-color: rgb(198, 226, 250);
+}
 </style>
 
 <script>
@@ -55,12 +86,12 @@ export default {
         return {
             selectedCountry: null,
             countries: [
-                { name: 'Lucas', code: 'br', avatar:'L' },
-                { name: 'Maria', code: 'BR', avatar: 'M' },
+                { name: 'Maicon', code: 'br', avatar:'M' },
+                { name: 'Leonardo', code: 'BR', avatar: 'L' },
                 { name: 'João', code: 'CN', avatar:'J' },
-                { name: 'Ana', code: 'EG', avatar:'A' },
-                { name: 'Felipe', code: 'FR', avatar:'F' },
-                { name: 'Camila', code: 'DE', avatar:'C' },
+                { name: 'Vinicius', code: 'EG', avatar:'v' },
+                { name: 'Carlos', code: 'FR', avatar:'C' },
+                { name: 'Luan', code: 'DE', avatar:'L' },
                 { name: 'Rafael', code: 'IN', avatar:'R' },
                 { name: 'Beatriz', code: 'JP', avatar:'B' },
                 { name: 'Gabriel', code: 'ES', avatar:'G' },
