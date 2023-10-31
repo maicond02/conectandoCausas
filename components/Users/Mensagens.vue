@@ -16,7 +16,7 @@
         <div class="col-9 h-full">
             <card class="h-full">
                 <template #title>
-                    <p style="font-size: x-large;">Leozin</p>
+                    <p style="font-size: x-large;">Leonardo</p>
                 </template>
                 <template #content>
                     <card class="">
