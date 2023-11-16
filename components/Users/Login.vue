@@ -62,7 +62,8 @@
                     if(foundUser.isOng == false){
                         this.$router.push('/user/feed')
                     }else if(foundUser.isOng == true){
-                        this.$router.push('/ong/feed')
+                        this.$router.push('/ong/profile')
+                        console.log(this.userStore.userAutenticado)
                     }
                 } else {
                     this.$toast.add({ severity: 'error', summary: 'Error', detail: 'O usuário não foi encontrado na base de dados!', life: 6000 });

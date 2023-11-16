@@ -1,5 +1,5 @@
 <template>
     <div>
-        oi
+        <ProfileOng />
     </div>
 </template>

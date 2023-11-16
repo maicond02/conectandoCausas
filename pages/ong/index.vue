@@ -1,5 +1,5 @@
 <template>
     <div>
-        index
+        <FeedOngProfile/>
     </div>
 </template>

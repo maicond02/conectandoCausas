@@ -1,5 +1,5 @@
 <template>
     <div>
-        <UsersMensagens/>
+        <Messages />
     </div>
   </template>
