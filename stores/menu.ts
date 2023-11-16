@@ -8,7 +8,7 @@ export const useMenuStore = defineStore('navbar', {
 
 	},
 	actions: {
-        loadNavbarItemsByLanguage(language:string, page:any){
+        loadNavbarItemsByLanguage(page:any){
             if(page == 'index' || page == 'about' || page == 'user-register' || page == 'user-login'){
                 this.items = [
                     {
@@ -27,15 +27,36 @@ export const useMenuStore = defineStore('navbar', {
                         to:'/contact'
                     },
                 ]
-            }else{
+            }
+        },
+        loadNavbarItems(isOng:boolean){
+            if(isOng == true){
                 this.items = [
                     {
                         label: 'Início',
                         icon: 'pi pi-fw pi-home',
-                        to:'/feed'
+                        to:'/ong/'
                     },
                     {
-                        label: 'Menssagens',
+                        label: 'Perfil',
+                        icon: 'pi pi-fw pi-user',
+                        to:'/ong/profile'
+                    },
+                    {
+                        label: 'Mensagens',
+                        icon: 'pi pi-fw pi-comments',
+                        to:'/ong/messages'
+                    },
+                ]
+            }else if(isOng == false){
+                this.items = [
+                    {
+                        label: 'Início',
+                        icon: 'pi pi-fw pi-home',
+                        to:'/user/feed'
+                    },
+                    {
+                        label: 'Mensagens',
                         icon: 'pi pi-fw pi-comments',
                         to:'/user/messages'
                     },
@@ -46,7 +67,6 @@ export const useMenuStore = defineStore('navbar', {
                     },
                 ]
             }
-            
         }
 	}
 });

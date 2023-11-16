@@ -1,5 +1,5 @@
 <template>
     <div>
-        <FeedOngProfile />
+        profile ong
     </div>
 </template>

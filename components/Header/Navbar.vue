@@ -6,10 +6,10 @@
                     || $route.name == 'contact' || $route.name == 'user-login' 
                     || $route.name == 'user-register'" class="flex"
                 >
-                    <nuxt-link to="/user/login">
+                    <nuxt-link to="/login">
                         <Button class="mr-4" label="Entrar na sua conta" severity="info" text raised />
                     </nuxt-link>
-                    <nuxt-link to="/user/register">
+                    <nuxt-link to="/register">
                         <Button class="mr-3" label="Criar uma nova conta" severity="info" outlined />
                     </nuxt-link>
                 </div>
@@ -19,22 +19,17 @@
 </template>
 <script lang="ts">
     import { useMenuStore } from '@/stores/menu';
+    import { useUserStore } from '@/stores/users';
     export default {
         data() {
             return {
                 menuStore: useMenuStore(),
-                selectedLanguage:'',
-                languages:[
-                    { language: 'English', code: 'en' },
-                    { language: 'Português', code: 'pt' },
-                    { language: 'Espanhol', code: 'es' },
-                ],
-
+                userStore:useUserStore(),
             };
         },
         mounted(){
-            this.menuStore.loadNavbarItemsByLanguage(this.$i18n.locale, this.$route.name)
-            console.log(this.$route.name)
+            this.menuStore.loadNavbarItemsByLanguage(this.$route.name);
+            this.menuStore.loadNavbarItems(this.userStore.userAutenticado.isOng);
         }
     };
 </script>

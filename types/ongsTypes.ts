@@ -1,5 +1,6 @@
 export type Ongs = {
     id: number,
     name: string,
-    message: string
+    message: string,
+    pic:string
 }

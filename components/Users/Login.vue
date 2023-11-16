@@ -14,12 +14,12 @@
                                 <b>OU</b>
                             </Divider>
                             <div class="w-8">
-                                <span class="text-lg">Email ou Apelido</span>
-                                <InputText placeholder="Digite seu email ou apelido" class="flex border-round w-12" type="text" />
+                                <span class="text-lg">Email ou Nome e Sobrenome</span>
+                                <InputText v-model="userName" placeholder="Digite seu email ou apelido" class="flex border-round w-12" type="text" />
                             </div>
                             <div class="w-8 mt-4">
                                 <span class="text-lg">Senha</span>
-                                <InputText placeholder="Digite sua senha" class="flex border-round w-12" type="text" />
+                                <InputText v-model="userPassword" placeholder="Digite sua senha" class="flex border-round w-12" type="password" />
                             </div>
                             <div class="flex w-8 mt-3">
                                 <div class="w-12">
@@ -30,7 +30,7 @@
                                     <label class="text-blue-500 cursor-pointer">Esqueceu a senha?</label>
                                 </div>
                             </div>
-                            <Button label="Entrar na conta" class="mt-6 w-8" severity="info"/>
+                            <Button @click="authenticateUser()" label="Entrar na conta" class="mt-6 w-8" severity="info"/>
                         </div>
                     </div>
                     <div class="col-12 md:col-6 flex align-items-center justify-content-center bg-blue-100">
@@ -43,7 +43,36 @@
 </template>
 
 <script lang="ts">
+    import {useUserStore} from '@/stores/users'
+    import {Users} from "@/types/usersTypes"
+    export default {
+        data(){
+            return{
+                userStore: useUserStore(),
+                userName:'',
+                userPassword:''
+            }
+        },
+        methods:{
+            authenticateUser() {
+                const foundUser:Users | undefined = this.userStore.usersData.find(user => user.name === this.userName || user.email === this.userName && user.password === this.userPassword);
+                if (foundUser) {
+                    this.userStore.userAutenticado = foundUser
+                    this.$toast.add({ severity: 'success', summary: 'Sucesso', detail: `Olá ${this.userName}`, life: 3000 });
+                    if(foundUser.isOng == false){
+                        this.$router.push('/user/feed')
+                    }else if(foundUser.isOng == true){
+                        this.$router.push('/ong/feed')
+                    }
+                } else {
+                    this.$toast.add({ severity: 'error', summary: 'Error', detail: 'O usuário não foi encontrado na base de dados!', life: 6000 });
+                }
+            }
+        },
+        mounted(){
 
+        }
+    }
 </script>
 
 <style scoped>

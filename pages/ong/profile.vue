@@ -1,5 +1,5 @@
 <template>
     <div>
-        <dashboardsGraphics />
+        oi
     </div>
 </template>
