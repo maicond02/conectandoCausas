@@ -1,11 +1,10 @@
 <template #content>
-    <div class="grid">
-        <div class="col-12">
-            <card class="flex justify-content-center w-12">
-              <template #content>
+    <div class="p-2">
+        <div class="grid shadow-2">
+            <div class="col-6">
                 <div class="col-12">
-                  <h3 style="font-size: xx-large;" class="col-12">Contato e nossas páginas</h3>
-                  <Fieldset>
+                    <h3 style="font-size: xx-large;" class="col-12">Contato e nossas páginas</h3>
+                    <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
                             <span class="custom-icon pi pi-whatsapp mr-2"></span>
@@ -13,11 +12,11 @@
                         </div>
                     </template>
                     <p class="m-0">
-                      Segue  nosso WhatsApp Messenger (19)123456789.
+                        Segue  nosso WhatsApp Messenger (19)123456789.
                     </p>
-                  </Fieldset>
+                    </Fieldset>
                     <!---------------------------->
-                  <Fieldset>
+                    <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
                             <span class="custom-icon-instagram pi pi-instagram mr-2"></span>
@@ -25,11 +24,11 @@
                         </div>
                     </template>
                     <p class="m-0">
-                      Segue  nosso Instagram @ConectandoCausas_.
+                        Segue  nosso Instagram @ConectandoCausas_.
                     </p>
-                  </Fieldset>
+                    </Fieldset>
                     <!---------------------------->
-                  <Fieldset>
+                    <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
                             <span class="custom-icon-facebook pi pi-facebook mr-2"></span>
@@ -37,11 +36,11 @@
                         </div>
                     </template>
                     <p class="m-0">
-                      Segue  nosso Facebook ConectandoCausas2023.
+                        Segue  nosso Facebook ConectandoCausas2023.
                     </p>
-                  </Fieldset>
-                   <!---------------------------->
-                  <Fieldset>
+                    </Fieldset>
+                    <!---------------------------->
+                    <Fieldset>
                     <template #legend>
                         <div class="flex align-items-center">
                             <span class="custom-icon-twitter pi pi-twitter mr-2"></span>
@@ -49,12 +48,14 @@
                         </div>
                     </template>
                     <p class="m-0">
-                      Segue  nosso Twitter @ConectandoCausas2023.
+                        Segue  nosso Twitter @ConectandoCausas2023.
                     </p>
-                  </Fieldset>
+                    </Fieldset>
                 </div>
-              </template>
-            </card>
+            </div>
+            <div class="col-6">
+                <img src="../../assets/images/Contact-us.png" alt="Sobre nós" class="w-12" />
+            </div>
         </div>
     </div>
 </template>

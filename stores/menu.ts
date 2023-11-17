@@ -9,7 +9,7 @@ export const useMenuStore = defineStore('navbar', {
 	},
 	actions: {
         loadNavbarItemsByLanguage(page:any){
-            if(page == 'index' || page == 'about' || page == 'user-register' || page == 'user-login'){
+            if(page == 'index' || page == 'about' || page == 'register' || page == 'login' || page == 'contact'){
                 this.items = [
                     {
                         label: 'Início',

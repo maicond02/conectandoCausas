@@ -3,14 +3,14 @@
         <Menubar :model="menuStore.items" >
             <template #end>
                 <div v-if="$route.name == 'index' || $route.name == 'about' 
-                    || $route.name == 'contact' || $route.name == 'user-login' 
-                    || $route.name == 'user-register'" class="flex"
+                    || $route.name == 'contact' || $route.name == 'login' 
+                    || $route.name == 'register'" class="flex"
                 >
                     <nuxt-link to="/login">
                         <Button class="mr-4" label="Entrar na sua conta" severity="info" text raised />
                     </nuxt-link>
                     <nuxt-link to="/register">
-                        <Button class="mr-3" label="Criar uma nova conta" severity="info" outlined />
+                        <Button class="mr-3" label="Criar uma nova conta" severity="info" />
                     </nuxt-link>
                 </div>
             </template>
@@ -55,6 +55,11 @@
 
     :deep(.p-menuitem-text){
         color:rgb(129, 129, 129) !important;
+    }
+
+    :deep(.p-menubar){
+        border:none;
+        border-bottom: solid 2px rgb(243, 243, 243);
     }
 
 </style>

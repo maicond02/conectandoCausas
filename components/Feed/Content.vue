@@ -1,25 +1,28 @@
 <template>
-    <div>
-        <Card>
-            <template #content>
-                <div class="grid">
-                    <div 
-                        v-for="ong in ongStore.ongsData" 
-                        :key="ong.id" 
-                        class="col-12 sm:col-4"
-                    >
-                        <div class="ong-card cursor-pointer shadow-3" @click="redirectToOngSelected(ong.id)">
-                            <div class="flex align-items-center justify-content-center">
-                                <Image :src="ong.pic" alt="Image" width="150" />
-                            </div>
-                            <div class="flex align-items-center justify-content-center">
-                                <p>{{ ong.name }}</p>
-                            </div>
+    <div class="mt-2">
+        <div class="shadow-2 p-4">
+            <div class="grid">
+                <div 
+                    v-for="ong in ongStore.ongsData" 
+                    :key="ong.id" 
+                    class="col-12 sm:col-4"
+                >
+                    <div class="cursor-pointer shadow-2" @click="redirectToOngSelected(ong.id)">
+                        <div class="flex">
+                            <Avatar class="m-2" size="xlarge" shape="circle" >
+                                <Image :src="ong.pic" alt="Image" />
+                            </Avatar>
+                            <p>{{ ong.name }}</p>
+                        </div>
+                        <Divider />
+                        <div class="flex align-items-center justify-content-center">
+                            <Button icon="pi pi-search" class="mb-4" label="Ver o perfil" severity="info" outlined />
+                            <Button icon="pi pi-money-bill" class="ml-4 mb-4" label="Realizar uma doação" severity="success" outlined />
                         </div>
                     </div>
                 </div>
-            </template>
-        </Card>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -53,10 +56,3 @@ export default {
     }
 }
 </script>
-
-<style>
-    .ong-card {
-        background-color: rgb(255, 255, 255) !important;
-        height: 200px;
-    }
-</style>
