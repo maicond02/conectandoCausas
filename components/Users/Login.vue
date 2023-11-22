@@ -40,10 +40,12 @@
 
 <script lang="ts">
     import {useUserStore} from '@/stores/users'
+    import { useMenuStore } from '@/stores/menu';
     import {Users} from "@/types/usersTypes"
     export default {
         data(){
             return{
+                menuStore: useMenuStore(),
                 userStore: useUserStore(),
                 userName:'',
                 userPassword:''
@@ -58,9 +60,11 @@
                     this.$toast.add({ severity: 'success', summary: 'Sucesso', detail: `Olá ${this.userName}`, life: 3000 });
                     if(foundUser.isong == 0){
                         this.$router.push('/user/feed')
+                        this.menuStore.loadNavbarItems(this.userStore.userAutenticado.isong);
                     }else if(foundUser.isong == 1){
                         this.$router.push('/ong/profile')
                         console.log(this.userStore.userAutenticado)
+                        this.menuStore.loadNavbarItems(this.userStore.userAutenticado.isong);
                     }
                 } else {
                     this.$toast.add({ severity: 'error', summary: 'Error', detail: 'O usuário não foi encontrado na base de dados!', life: 6000 });

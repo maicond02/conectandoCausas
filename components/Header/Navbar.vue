@@ -29,7 +29,6 @@
         },
         mounted(){
             this.menuStore.loadNavbarItemsByLanguage(this.$route.name);
-            this.menuStore.loadNavbarItems(this.userStore.userAutenticado.isOng);
         }
     };
 </script>

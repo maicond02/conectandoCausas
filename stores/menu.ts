@@ -29,8 +29,8 @@ export const useMenuStore = defineStore('navbar', {
                 ]
             }
         },
-        loadNavbarItems(isOng:boolean){
-            if(isOng == true){
+        loadNavbarItems(isOng:number){
+            if(isOng == 1){
                 this.items = [
                     {
                         label: 'Início',
@@ -48,7 +48,7 @@ export const useMenuStore = defineStore('navbar', {
                         to:'/ong/messages'
                     },
                 ]
-            }else if(isOng == false){
+            }else if(isOng == 0){
                 this.items = [
                     {
                         label: 'Início',
