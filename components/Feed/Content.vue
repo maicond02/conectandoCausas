@@ -7,7 +7,7 @@
                     :key="ong.id" 
                     class="col-12 sm:col-4"
                 >
-                    <div class="cursor-pointer shadow-2" @click="redirectToOngSelected(ong.id)">
+                    <div class="cursor-pointer shadow-2">
                         <div class="flex">
                             <Avatar class="m-2" size="xlarge" shape="circle" >
                                 <Image :src="ong.pic" alt="Image" />
@@ -16,7 +16,7 @@
                         </div>
                         <Divider />
                         <div class="flex align-items-center justify-content-center">
-                            <Button icon="pi pi-search" class="mb-4" label="Ver o perfil" severity="info" outlined />
+                            <Button @click="redirectToOngSelected(ong.id)" icon="pi pi-search" class="mb-4" label="Ver o perfil" severity="info" outlined />
                             <Button icon="pi pi-money-bill" class="ml-4 mb-4" label="Realizar uma doação" severity="success" outlined />
                         </div>
                     </div>
@@ -43,8 +43,7 @@ export default {
     },
     methods: {
         redirectToOngSelected(id:number){
-            this.$router.push('/feed/ong')
-            console.log(id)
+            this.$router.push('/user/ong-profile')
         },
         elevationCard(){
 

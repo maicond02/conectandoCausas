@@ -12,21 +12,21 @@
                         <b>OU</b>
                     </Divider>
                     <div class="w-8">
+                        <span class="text-lg">Nome</span>
+                        <InputText v-model="userData.name" placeholder="Digite seu apelido" class="flex border-round w-12 mt-1" type="text" />
+                    </div>
+                    <div class="w-8 mt-4">
                         <span class="text-lg">Email</span>
                         <InputText v-model="userData.email" placeholder="Digite seu email" class="flex border-round w-12 mt-1" type="text" />
                     </div>
                     <div class="w-8 mt-4">
-                        <span class="text-lg">Apelido</span>
-                        <InputText v-model="userData.apelido" placeholder="Digite seu apelido" class="flex border-round w-12 mt-1" type="text" />
-                    </div>
-                    <div class="w-8 mt-4">
                         <span class="text-lg">Senha</span>
-                        <InputText v-model="userData.senha" placeholder="Digite sua senha" class="flex border-round w-12 mt-1" type="text" />
+                        <InputText v-model="userData.password" placeholder="Digite sua senha" class="flex border-round w-12 mt-1" type="password" />
                     </div>
                     <div class="w-8 mt-4">
                         <span class="text-lg">É uma instituição?</span>
-                        <Dropdown v-model="userData.isOng" placeholder="Selecione uma opção" :options="options"
-                            class="flex border-round w-12 mt-1" type="text" optionLabel="option"
+                        <Dropdown v-model="userData.isong" placeholder="Selecione uma opção" :options="options"
+                            class="flex border-round w-12 mt-1" type="text" optionLabel="label" optionValue="option"
                         />
                     </div>
                     <div class="flex w-8 mt-3">
@@ -38,7 +38,7 @@
                             <label class="text-blue-500 cursor-pointer">Já tem conta, clique aqui?</label>
                         </div>
                     </div>
-                    <Button label="Criar sua conta" class="mt-6 w-8" severity="info"/>
+                    <Button @click="addNewUser()" label="Criar sua conta" class="mt-6 w-8" severity="info"/>
                 </div>
             </div>
             <div class="col-12 md:col-6 flex align-items-center justify-content-center">
@@ -49,16 +49,36 @@
 </template>
 
 <script lang="ts">
+    import {useUserStore} from '@/stores/users'
     export default {
         data(){
             return{
+                userStore: useUserStore(),
                 userData:{
                     email:'',
-                    apelido:'',
-                    senha:'',
-                    isOng:''
+                    name:'',
+                    password:'',
+                    pic:'https://img.freepik.com/fotos-gratis/empresario-prospero-mantem-as-maos-cruzadas-tem-expressao-satisfeita_273609-16711.jpg?size=626&ext=jpg&ga=GA1.1.936808609.1679678279&semt=sph',
+                    isong:0
                 },
-                options:[{option:'Não'},{option:'Sim'}]
+                options:[{label:'Não',option:0},{label:'Sim',option:1}]
+            }
+        },
+        methods:{
+            async addNewUser(){
+                if(this.userData.isong == 0){
+                    this.$router.push('/user/feed')
+                }else if(this.userData.isong == 1){
+                    this.$router.push('/ong/profile')
+                }
+                await this.userStore.addNewUser(this.userData);
+                this.userData = {
+                    email:'',
+                    name:'',
+                    password:'',
+                    pic:'https://img.freepik.com/fotos-gratis/empresario-prospero-mantem-as-maos-cruzadas-tem-expressao-satisfeita_273609-16711.jpg?size=626&ext=jpg&ga=GA1.1.936808609.1679678279&semt=sph',
+                    isong:0
+                }
             }
         }
     }

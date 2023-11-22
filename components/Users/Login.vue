@@ -50,14 +50,15 @@
             }
         },
         methods:{
-            authenticateUser() {
+            async authenticateUser() {
+                await this.userStore.getUsersData();
                 const foundUser:Users | undefined = this.userStore.usersData.find(user => user.name === this.userName || user.email === this.userName && user.password === this.userPassword);
                 if (foundUser) {
                     this.userStore.userAutenticado = foundUser
                     this.$toast.add({ severity: 'success', summary: 'Sucesso', detail: `Olá ${this.userName}`, life: 3000 });
-                    if(foundUser.isOng == false){
+                    if(foundUser.isong == 0){
                         this.$router.push('/user/feed')
-                    }else if(foundUser.isOng == true){
+                    }else if(foundUser.isong == 1){
                         this.$router.push('/ong/profile')
                         console.log(this.userStore.userAutenticado)
                     }

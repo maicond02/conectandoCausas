@@ -3,6 +3,6 @@ export type Users = {
     name: string,
     email:string,
     password: string,
-    isOng: boolean,
+    isong: number,
     pic:string
 }
