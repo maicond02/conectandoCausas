@@ -17,7 +17,7 @@
                         <Divider />
                         <div class="flex align-items-center justify-content-center">
                             <Button @click="redirectToOngSelected(ong.id)" icon="pi pi-search" class="mb-4" label="Ver o perfil" severity="info" outlined />
-                            <Button icon="pi pi-money-bill" class="ml-4 mb-4" label="Realizar uma doação" severity="success" outlined />
+                            <Button @click="redirectToOngDonation(ong.id)" icon="pi pi-money-bill" class="ml-4 mb-4" label="Realizar uma doação" severity="success" outlined />
                         </div>
                     </div>
                 </div>
@@ -42,11 +42,15 @@ export default {
         }
     },
     methods: {
-        redirectToOngSelected(id:number){
+        async redirectToOngSelected(id:number){
+            this.ongStore.ongId = id
+            await this.ongStore.loadOngById()
             this.$router.push('/user/ong-profile')
         },
-        elevationCard(){
-
+        async redirectToOngDonation(id:number){
+            this.ongStore.ongId = id
+            await this.ongStore.loadOngById()
+            this.$router.push('/user/donation')
         }
     },
     mounted(){

@@ -5,28 +5,22 @@
                 <div>
                     <div class="grid shadow-2">
                         <div class="col-4 flex justify-content-center">
-                            <img class="w-12" src="../../assets/images/save-planet.png" alt="">
+                            <Image class="w-12" :src="ongStore.ongSelected.pic" alt="" width="200"/>
                         </div>
                         <div class="col-8">
-                            <h2>ONG Ajuda Solidária</h2>
-                            <p>A "ONG Ajuda Solidária" é uma organização sem fins lucrativos, comprometida em promover apoio e assistência a indivíduos em situação de vulnerabilidade. Nossa missão é proporcionar recursos, capacitação e suporte emocional, visando à reintegração social e ao fortalecimento do potencial individual. Por meio de doações, parcerias e o trabalho dedicado de voluntários, buscamos transformar vidas, estabelecer pontes de solidariedade e construir um futuro mais digno para todos aqueles que atendemos. Junte-se a nós e faça parte dessa rede de amor e cuidado!</p>
+                            <h2>{{ ongStore.ongSelected.name }}</h2>
+                            <p>{{ ongStore.ongSelected.message }}</p>
                         </div>
                     </div>
-                    <div class="mt-2 w-12 flex">
-                        <div class="w-2 flex flex-column align-items-center">
-                            <p class="pi pi-bookmark"> 12</p>
-                            <p class="pi pi-heart"> 12</p>
-                            <p class="pi pi-comments"> 12</p>
-                        </div>
-                        <Divider layout="vertical" />
-                        <div class="w-8">
-                            <h1 class="highlight">Faça Parte da Mudança com a ONG Ajuda Solidária!</h1>
+                    <div class="mt-2 grid">
+                        <div class="col-8">
+                            <h1 class="highlight">Faça Parte da Mudança com a Nossa ONG!</h1>
                             <p>
                                 Olá!
                             </p>
 
                             <p>
-                                A "ONG Ajuda Solidária" dedica-se de coração e alma a apoiar indivíduos em situações de vulnerabilidade. Nossa missão vai além de simples assistência; nós proporcionamos recursos, capacitação e, acima de tudo, suporte emocional. Buscamos, dia após dia, garantir a reintegração social e potencializar o poder individual de cada ser humano que nos procura.
+                                Nossa ONG dedica-se de coração e alma a apoiar indivíduos em situações de vulnerabilidade. Nossa missão vai além de simples assistência; nós proporcionamos recursos, capacitação e, acima de tudo, suporte emocional. Buscamos, dia após dia, garantir a reintegração social e potencializar o poder individual de cada ser humano que nos procura.
                             </p>
 
                             <p>
@@ -34,7 +28,7 @@
                             </p>
 
                             <p>
-                                Ao contribuir com a "ONG Ajuda Solidária", você não está apenas doando dinheiro; está investindo em um futuro melhor, em esperança e em transformação.
+                                Ao contribuir com a nossa ONG, você não está apenas doando dinheiro; está investindo em um futuro melhor, em esperança e em transformação.
                             </p>
 
                             <h2>Como Doar?</h2>
@@ -50,40 +44,32 @@
 
                             <p>
                                 <strong>Com profunda gratidão,</strong><br>
-                                Equipe da ONG Ajuda Solidária
+                                Equipe da Nossa ONG
                             </p>
                         </div>
-                        <Divider layout="vertical" />
-                        <div class="w-2">
-                            <h3>Outras ONGs</h3>
-                            <Card class="mt-2">
-                                <template #content>
-                                    <div>
-                                        
-                                    </div>
-                                </template>
-                            </Card>
-                            <Card class="mt-2">
-                                <template #content>
-                                    <div>
-                                        
-                                    </div>
-                                </template>
-                            </Card>
-                            <Card class="mt-2">
-                                <template #content>
-                                    <div>
-                                        
-                                    </div>
-                                </template>
-                            </Card>
-                            <Card class="mt-2">
-                                <template #content>
-                                    <div>
-                                        
-                                    </div>
-                                </template>
-                            </Card>
+                        <div class="col-4">
+                            <div class="flex flex-column align-items-center justify-content-center shadow-2">
+                                <div>Doação segura</div>
+                                <div class="mt-4 w-12 flex justify-content-center">
+                                    <SelectButton v-model="value" :options="options" aria-labelledby="basic"/>
+                                </div>
+                                <div class="w-6 mt-4">
+                                    <Button @click="totalDonation += 600" label="600" class="w-4" severity="info" text raised/>
+                                    <Button @click="totalDonation += 500" label="500" class="w-4" severity="info" text raised/>
+                                    <Button @click="totalDonation += 400" label="400" class="w-4" severity="info" text raised/>
+                                </div>
+                                <div class="w-6 mt-2">
+                                    <Button @click="totalDonation += 300" label="300" class="w-4" severity="info" text raised/>
+                                    <Button @click="totalDonation += 200" label="200" class="w-4" severity="info" text raised/>
+                                    <Button @click="totalDonation += 100" label="100" class="w-4" severity="info" text raised/>
+                                </div>
+                                <div class="w-6 mt-4">
+                                    <InputNumber v-model="totalDonation" class="w-12"/>
+                                </div>
+                                <div class="w-6 mt-2">
+                                    <Button label="Realizar doação" class="w-12 mt-4 mb-4" severity="info"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,5 +79,20 @@
 </template>
 
 <script>
+
+    import {useOngStore} from "@/stores/ongs"
+
+    export default{
+        data(){
+            return{
+                ongStore: useOngStore(),
+                value: 'Uma vez',
+                options: ['Uma vez', 'Mensalmente'],
+                totalDonation: 0
+            }
+        },
+        mounted(){
+        }
+    }
 
 </script>

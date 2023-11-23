@@ -65,6 +65,7 @@ import Password from 'primevue/password';
 import Chart from 'primevue/chart';
 import Divider from 'primevue/divider';
 import Listbox from 'primevue/listbox';
+import SelectButton from 'primevue/selectbutton';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(DialogService);
@@ -76,6 +77,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('Divider', Divider);
     nuxtApp.vueApp.component('Listbox', Listbox);
     nuxtApp.vueApp.component('Button', Button);
+    nuxtApp.vueApp.component('SelectButton', SelectButton);
     nuxtApp.vueApp.component('Card',Card)
     nuxtApp.vueApp.component('Panel',Panel)
     nuxtApp.vueApp.component('Fieldset',Fieldset)

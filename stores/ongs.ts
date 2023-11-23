@@ -2,12 +2,16 @@ import { defineStore } from 'pinia';
 import {Ongs} from "@/types/ongsTypes"
 
 type State = {
-    ongsData: Ongs[]
+    ongId: number,
+    ongsData: Ongs[],
+    ongSelected: any
 }
 
 export const useOngStore = defineStore('ong', {
 	state: (): State => ({ 
-        ongsData:[]
+        ongId:0,
+        ongsData:[],
+        ongSelected:null
 	}),
 	getters: {
 
@@ -22,6 +26,11 @@ export const useOngStore = defineStore('ong', {
                 { id: 5, name: 'AnimalAmigos',  pic:'https://img.freepik.com/vetores-gratis/dia-mundial-da-humanidade-em-design-plano_23-2148573749.jpg?size=626&ext=jpg&ga=GA1.1.936808609.1679678279&semt=ais', message: 'AnimalAmigos é uma organização apaixonada pelo bem-estar animal. Resgatamos animais abandonados, promovemos campanhas de adoção e trabalhamos incansavelmente para conscientizar sobre o respeito e cuidado que cada criatura merece. Nosso sonho é um mundo onde cada animal seja tratado com amor e compaixão.' },
                 { id: 6, name: 'TechParaTodos',  pic:'https://img.freepik.com/vetores-gratis/design-de-logotipo-humano-e-terrestre_474888-2091.jpg?size=626&ext=jpg&ga=GA1.1.936808609.1679678279&semt=ais', message: 'Em um mundo cada vez mais digital, a TechParaTodos busca nivelar o campo de jogo. Oferecemos cursos de TI, workshops e recursos para comunidades carentes e populações marginalizadas, garantindo que todos tenham as habilidades necessárias para prosperar na era digital.' }
             ]
+        },
+        async loadOngById(){
+            let returneData = this.ongsData.find((data) => data.id == this.ongId)
+            this.ongSelected = returneData
+            console.log(returneData)
         }
 	}
 });
